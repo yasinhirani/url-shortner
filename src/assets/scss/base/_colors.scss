@@ -1,0 +1,17 @@
+$primary: #f0f1f6;
+$gray: hsl(0, 0%, 75%);
+$cyan: hsl(180, 66%, 49%);
+$darkViolet: hsl(257, 27%, 26%);
+$grayishViolet: hsl(257, 7%, 63%);
+$veryDarkBlue: hsl(255, 11%, 22%);
+$veryDarkViolet: hsl(260, 8%, 14%);
+
+$theme-colors: (
+    'primary': $primary,
+    'gray': $gray,
+    'cyan': $cyan,
+    'darkViolet': $darkViolet,
+    'grayishViolet': $grayishViolet,
+    'veryDarkBlue': $veryDarkBlue,
+    'veryDarkViolet': $veryDarkViolet,
+);

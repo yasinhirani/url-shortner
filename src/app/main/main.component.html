@@ -1,0 +1,132 @@
+<div class="wrapper">
+    <header class="container-fluid px-5 sticky-top bg-white py-5 d-flex justify-content-between justify-content-md-start align-items-center">
+        <figure class="d-inline-block mb-0">
+            <img src="../../assets/images/logo.svg" alt="">
+        </figure>
+        <input type="checkbox" name="hamburger" id="hamburger">
+        <div class="navbar-list">
+            <div>
+                <ul class="nav ml-0 ml-md-4 flex-column flex-md-row pb-4 pb-sm-0">
+                    <li class="nav-item px-3"><a class="nav-link px-0" href="#">Features</a></li>
+                    <li class="nav-item px-3"><a class="nav-link px-0" href="#">Pricing</a></li>
+                    <li class="nav-item px-3"><a class="nav-link px-0" href="#">Resources</a></li>
+                </ul>
+            </div>
+            <div class="d-flex flex-column flex-md-row mt-4 mt-sm-0">
+                <button class="btn btn-transparent text-gray font-weight-bold">Login</button>
+                <button class="btn btn-cyan btn-signup text-white font-weight-bold ml-0 ml-md-4">Sign Up</button>
+            </div>
+        </div>
+        <label class="mb-0" for="hamburger">
+            <figure class="mb-0 d-inline-block d-md-none">
+                <img src="../../assets/images/hamburger.PNG" alt="">
+            </figure>
+        </label>
+    </header>
+    <main class="pt-4 flex-grow-1 d-flex flex-column position-relative">
+        <div class="container-fluid px-5 d-flex flex-column flex-md-row justify-content-md-between align-items-center"> 
+            <div class="order-2 order-md-1 mt-4 mt-md-0">
+                <h1 class="mb-0 font-weight-bold heading">More than just shorter links</h1>
+                <p class="mb-0 mt-3 text-gray para">Build your brand's recognition and get detailed insights on how your links are performing</p>
+                <button class="btn btn-cyan btn-signup py-2 px-4 text-white font-weight-bold mt-5">Get started</button>
+            </div>
+            <figure class="mb-0 order-1 order-md-2">
+                <img class="img-fluid" src="../../assets/images/illustration-working.svg" alt="">
+            </figure>
+        </div>
+        <div class="input-wrapper container-fluid px-5 mt-4">
+            <div class="input p-4">
+                <input class="shorten-box" type="url" #url name="url" [(ngModel)]="url_value" id="url" placeholder="Shorten a link here...">
+                <button class="btn btn-cyan btn-shorten text-white font-weight-bold ml-0 ml-md-4" (click)="getUrl(url.value)" value="">Shorten it</button>
+            </div>
+        </div>
+        <div class="content-wrapper flex-grow-1 container-fluid bg-primary px-3 px-md-5">
+            <ul class="nav mb-5">
+                <li class="url-list bg-white w-100 my-3" *ngFor="let urlObj of urlArray">
+                    <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-center p-3">
+                        <p class="url mb-0">{{urlObj.original_link}}</p>
+                        <div class="d-flex flex-column flex-md-row align-items-md-center mt-3 mt-md-0">
+                            <p class="text-cyan mb-0">{{urlObj.shorten_link}}</p>
+                            <button id="btnCopy" title="click to copy" class="btn btn-cyan border-0 btn-signup py-2 px-4 text-white font-weight-bold ml-0 ml-md-4 mt-3 mt-md-0" (click)="copyUrl($event.target, urlObj.shorten_link)">copy</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="pt-5 statistics">
+                <h2 class="font-weight-bold statistics-heading">Advanced Statistics</h2>
+                <p class="mb-0 text-center text-gray statistics-content">Track how your links are performing across the web with our advanced statistics dashboard.</p>
+            </div>
+            <div class="pt-5 card-section d-flex flex-column flex-md-row align-items-center justify-content-center pb-5">
+                <div class="brand-recognition bg-white p-4 rounded">
+                    <figure class="mb-0 bg-darkViolet p-3 rounded-circle d-inline-block">
+                        <img src="../../assets/images/icon-brand-recognition.svg" alt="">
+                    </figure>
+                    <h4 class="mb-0 font-weight-bold mt-5">Brand Recognition</h4>
+                    <p class="text-gray mb-0">Boost your brand recognition with each click. Generic links don't mean a thing. Branded links help instill cofidce in your content.</p>
+                </div>
+                <div class="brand-recognition bg-white p-4 mx-0 mx-md-4 rounded">
+                    <figure class="mb-0 bg-darkViolet p-3 rounded-circle d-inline-block">
+                        <img src="../../assets/images/icon-detailed-records.svg" alt="">
+                    </figure>
+                    <h4 class="mb-0 font-weight-bold mt-5">Brand Recognition</h4>
+                    <p class="text-gray mb-0">Boost your brand recognition with each click. Generic links don't mean a thing. Branded links help instill cofidce in your content.</p>
+                </div>
+                <div class="brand-recognition bg-white p-4 rounded">
+                    <figure class="mb-0 bg-darkViolet p-3 rounded-circle d-inline-block">
+                        <img src="../../assets/images/icon-fully-customizable.svg" alt="">
+                    </figure>
+                    <h4 class="mb-0 font-weight-bold mt-5">Brand Recognition</h4>
+                    <p class="text-gray mb-0">Boost your brand recognition with each click. Generic links don't mean a thing. Branded links help instill cofidce in your content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="boost p-4 d-flex flex-column align-items-center">
+            <h4 class="mb-0 text-white">Boost your links today</h4>
+            <button class="btn btn-cyan btn-signup text-white mt-3">Get started</button>
+        </div>
+        <footer class="bg-veryDarkViolet text-white d-flex p-4">
+            <div class="d-flex flex-column flex-md-row align-items-center align-items-md-stretch justify-content-around w-100 py-5">
+                <h2 class="mb-0 font-weight-bold">Shortly</h2>
+            <div>
+                <h5 class="mb-4 mt-5 mt-md-0">Features</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link px-0 py-1 font-weight-normal" href="#">Link Shortning</a></li>
+                    <li class="nav-item"><a class="nav-link px-0 py-1 font-weight-normal" href="#">Branded Links</a></li>
+                    <li class="nav-item"><a class="nav-link px-0 py-1 font-weight-normal" href="#">Analytics</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="mb-4 mt-5 mt-md-0">Resources</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link px-0 py-1 font-weight-normal" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link px-0 py-1 font-weight-normal" href="#">Developers</a></li>
+                    <li class="nav-item"><a class="nav-link px-0 py-1 font-weight-normal" href="#">Support</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="mb-4 mt-5 mt-md-0">Company</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link px-0 py-1 font-weight-normal" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link px-0 py-1 font-weight-normal" href="#">Our Team</a></li>
+                    <li class="nav-item"><a class="nav-link px-0 py-1 font-weight-normal" href="#">Careers</a></li>
+                    <li class="nav-item"><a class="nav-link px-0 py-1 font-weight-normal" href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="mt-4 mt-md-0">
+                <figure class="d-inline-block mx-3">
+                    <img src="../../assets/images/icon-facebook.svg" alt="">
+                </figure>
+                <figure class="d-inline-block mx-3">
+                    <img src="../../assets/images/icon-twitter.svg" alt="">
+                </figure>
+                <figure class="d-inline-block mx-3">
+                    <img src="../../assets/images/icon-pinterest.svg" alt="">
+                </figure>
+                <figure class="d-inline-block mx-3">
+                    <img src="../../assets/images/icon-instagram.svg" alt="">
+                </figure>
+            </div>
+            </div>
+        </footer>
+    </main>
+</div>
